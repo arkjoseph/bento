@@ -412,6 +412,9 @@ body#front #content section {
 }
 
 /* Node Forms loaded AJAX */
+#content #rEdit .node-form label {
+
+}
 #content #rEdit .node-form .standard,
 #content #rEdit .node-form .standard .form-item {
 	float: left;
@@ -425,33 +428,35 @@ body#front #content section {
 #content #rEdit .node-form .standard .form-item .form-radios {
 	min-width: 47px;
 }
-
+.views-exposed-form input[type='text']:focus,
 #content #rEdit .node-form input[type='text']:focus,
 #content #rEdit .node-form .form-textarea:focus,
 #content #rEdit .container-inline-date .form-item input:focus {
 	border: 1px solid #8abcd9;
 	background-color: #e7f1f7;
 }
+.views-exposed-form input[type='text'],
 #content #rEdit .node-form input[type='text'],
 #content #rEdit .node-form .form-textarea,
 #content #rEdit .container-inline-date .form-item input {
-    -moz-border-radius:3px;
+   -moz-border-radius:3px;
    -webkit-border-radius:3px;
    border-radius:3px;
    border: 1px solid #E0DFE3;
 }
+.views-exposed-form input[type='text'],
 #content #rEdit .node-form input[type='text'],
 #content #rEdit .container-inline-date .form-item input {
    padding: 4px;
     width: 180px;
 }
-
+.views-exposed-form input[type='text']:focus,
 #content #rEdit .node-form input:focus { 
 	-webkit-box-shadow: 0 0 5px rgba(33, 187, 225, 1);
 	-moz-box-shadow: 0 0 5px rgba(33, 187, 225, 1);
 	box-shadow: 0 0 5px rgba(33, 187, 225, 1);
 }
-#content #rEdit .node-form fieldset,
+#content #rEdit .node-form fieldset.collapsible,
 #content #rEdit .container-inline-date .description,
 #content #rEdit .node-form fieldset legend {
 	display: none;
@@ -465,7 +470,7 @@ body#front #content section {
 	-webkit-box-shadow: 0px 0px 3px 2px #bbbbbb;
 	box-shadow: 0px 0px 3px 2px #bbbbbb;
 }
-#content #rEdit .node-form fieldset.group-textareas {
+#content #rEdit .node-form fieldset {
 	display: block;
 	max-width: 25%;
   padding: 15px 0 40px 25px;
@@ -477,19 +482,24 @@ body#front #content section {
   max-width: 70%;
   padding: 10px;
 }
+#content #rEdit .node-form fieldset label {
+	font-size: 11px;
+	margin-left: 8px;
+}
 
 @media all and (max-width: 1025px) and (min-width: 600px) {
   #content #rEdit .node-form .form-textarea {
 		width: inherit;
   	}
-  #content #rEdit .node-form fieldset.group-textareas {
+  #content #rEdit .node-form fieldset.group-month-group {width:100%;}
+  #content #rEdit .node-form fieldset {
 	  float: left;
 		margin-top: 20px;	
 		max-width: 97%;
   }
   #content #rEdit .node-form fieldset.group-gen-fields {
 	  max-width: 100%;
-  	margin: 0 0px 0 0;
+  	margin: 0;
   }
 }
 
@@ -547,7 +557,7 @@ body#options #rEdit {
 
 /**** Application Buttons ****/
 .button.grey,
-#edit-reset{
+.form-submit{
 	color: #ffffff;
 	border: none;
 	background: #EFEFEF;
@@ -556,7 +566,7 @@ body#options #rEdit {
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#85afd8', endColorstr='#5a8cc8');
 }
 .button.grey:hover,
-#edit-reset:hover {
+.form-submit:hover {
 	border: none;
 	background: #990718;
 	background: -webkit-gradient(linear, left top, left bottom, from(#5a8cc8), to(#85afd8));
@@ -592,9 +602,7 @@ body#options #rEdit {
 	background: -moz-linear-gradient(top,  #990718,  #f2102a);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#990718', endColorstr='#f2102a');
 }
-
-.button,
-#edit-reset {
+.form-submit {
 	display: inline-block;
 	outline: none;
 	cursor: pointer;
@@ -610,8 +618,7 @@ body#options #rEdit {
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
 	box-shadow: 0 1px 2px rgba(0,0,0,.5);
 }
-.button.sheer,
-#edit-reset {
+.form-submit {
 	letter-spacing: 1px;
 	font-size: 15px;
 	padding: 10px 35px;

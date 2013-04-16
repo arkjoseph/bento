@@ -13,13 +13,15 @@
     <script type="text/javascript">
 
 		$(function(){
-
+		  setTimeout(function() {
+				$(".messages").fadeOut();
+			},5000);
+			
 		  $(".parent-mlid-11 ul li a").attr('data-target','#rEdit');
 
 		  $("#rEdit").hide();
-		  
 
-			$("[data-target]").live('click', function (event){
+		  $("[data-target]").live('click', function (event){
 
 				 if($("#rEdit").is(":visible")){
 				     $("#rEdit").fadeOut();
@@ -118,10 +120,10 @@
           <?php endif; ?>
 
           <div id="content-area">
+            <?php print $content; ?>
           
 						<section><content id="rEdit"></content></section>
           
-            <?php print $content; ?>
           </div> <!-- /#content-area -->
 
           </div>
