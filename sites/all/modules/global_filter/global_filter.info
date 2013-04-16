@@ -1,0 +1,13 @@
+name = Global Filter
+description = Create a global filter that simultaneously drives a number of Views on your site. For instance you can filter your Views content by the country the user selects somewhere on the front page.
+package = Views
+dependencies[] = views
+core = 6.x
+version = 6.x-1.dev
+
+; Information added by drupal.org packaging script on 2012-09-13
+version = "6.x-1.1"
+core = "6.x"
+project = "global_filter"
+datestamp = "1347496958"
+
