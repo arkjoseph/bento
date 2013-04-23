@@ -13,11 +13,13 @@
     <script type="text/javascript">
 
 		$(function(){
+			$("li.content_month").prepend("<span>");
+			
 		  setTimeout(function() {
 				$(".messages").fadeOut();
 			},5000);
 			
-		  $(".parent-mlid-11 ul li a").attr('data-target','#rEdit');
+		  $(".parent-mlid-11 ul li a, .add_title a").attr('data-target','#rEdit');
 
 		  $("#rEdit").hide();
 
@@ -53,42 +55,19 @@
   </head>
   <body class="<?php print $body_classes; ?>" id="front">
     <div id="skip">
-      <a href="#content"><?php print t('Skip to Content'); ?></a>
-      <?php if (!empty($primary_links) || !empty($secondary_links)): ?>
-        <a href="#navigation"><?php print t('Skip to Navigation'); ?></a>
-      <?php endif; ?>
-    </div>
+     </div>
 
     <div id="page">
 
     <!-- ______________________ HEADER _______________________ -->
 
     <header>
-				
-        <?php if (!empty($logo)): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
-          </a>
-        <?php endif; ?>
-
       <?php if ($header): ?>
         <div id="header-region">
-          <?php print $header; ?>
-          
-          <!-- ______________ FPO MENU _______________ -->
-   				<nav>
-   					<ul class="menu" id="app-menu-main">
-   						<li><a class="button node-add blue" data-target="#rEdit" href="/node/add/data-collection">+</a></li>
-   						<li><a class="button node-add blue" data-target="" href="/options">&#937;</a></li>
-   					</ul>
-   				</nav>      
-   				
+          <?php print $header; ?>    
         </div>
       <?php endif; ?>
-
-      <?php // Uncomment to add the search box.// print $search_box; ?>
-
-    </header> <!-- /header -->
+		</header> <!-- /header -->
 
     <!-- ______________________ MAIN _______________________ -->
 
@@ -129,13 +108,6 @@
           </div>
         </div> <!-- /content-inner /content -->
 
-        <?php if (!empty($primary_links) || !empty($secondary_links)): ?>
-          <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "with-main-menu"; } if (!empty($secondary_links)) { print " with-sub-menu"; } ?>">
-            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-            <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
-          </div> <!-- /navigation -->
-        <?php endif; ?>
-
         <?php if ($left): ?>
           <div id="sidebar-first" class="column sidebar first">
             <div id="sidebar-first-inner" class="inner">
@@ -157,10 +129,10 @@
       <!-- ______________________ FOOTER _______________________ -->
 
       <?php if(!empty($footer_message) || !empty($footer_block)): ?>
-        <div id="footer">
+        <footer>
           <?php print $footer_message; ?>
           <?php print $footer_block; ?>
-        </div> <!-- /footer -->
+        </footer> <!-- /footer -->
       <?php endif; ?>
 
     </div> <!-- /page -->

@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	/* Setting up font size, leading and font family
    * http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography */
-	font: 13px/1.5em "Helvetica Neue", helvetica, Arial, sans-serif;
+	font: 13px/1.5em "Arial", helvetica, sans-serif;
 }
 
 /* Links */
@@ -134,7 +134,10 @@ abbr {
 	cursor: help;
 	white-space: nowrap;
 }
-
+.block ul {
+    margin: 0;
+    padding: 0;
+}
 /* UI improvments. */
 /* line 109, ../sass/style.sass */
 #edit-title {
@@ -217,12 +220,23 @@ div.status .item-list ul li {
 }
 /* Region Colors. delete when starting a new theme. */
 /* line 150, ../sass/style.sass */
-header,#footer {
+header, footer {
 	display: inline-block;
 	width: 100%;
+	position: relative;
 }
 header {
+	height: 60px;
 	margin: 15px 0 9px 0;
+}
+footer {
+
+}
+
+header,
+#sidebar-first,
+#content #rEdit .node-form fieldset,
+body#options #content .view .view-filters {
 	-webkit-border-radius: .4em;
 	-moz-border-radius: .4em;
 	border-radius: .4em;
@@ -237,20 +251,21 @@ header {
 	background: -ms-linear-gradient(top,  #fefefe 0%,#f3f3f3 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #fefefe 0%,#f3f3f3 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-8 */
-		
 }
-
-/* line 153, ../sass/style.sass */
 #sidebar-first {
-	background: #e7edff;
+  width: 190px;
+  margin-right: -190px;
 }
-
-/* line 156, ../sass/style.sass */
+.two-sidebars .center,
+.sidebar-right .center {
+  margin-right: 200px;
+}
+#sidebar-second {
+  width: 200px;
+}
 #sidebar-second {
 	background: #ffd075;
 }
-
-/* line 159, ../sass/style.sass */
 #navigation {
 	background: #feffa5;
 }
@@ -300,7 +315,7 @@ tr.odd {
 #content .view-content table {
 /*   display: block;
  */  float: left;
-  height: 50%;
+  /* height: 50%; */
   overflow-y: auto;
   width: 100%;
 /*   display: inline-table;
@@ -397,21 +412,25 @@ tr.odd {
   padding: 15px 12px 20px;
 	background: #ffffff;
 	float: left;
+	margin: 18px 5px 9px 5px;
+	-webkit-box-shadow: 0px 0px 3px 2px #bbbbbb;
+	box-shadow: 0px 0px 3px 2px #bbbbbb;
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
-	margin: 18px 5px 9px 15px;
 }
 #content section {  
-	height: 320px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 body#front #content section {
-	height: auto;
+
 }
 
 /* Node Forms loaded AJAX */
+.form-radios .form-item {
+	min-width: 50px;
+}
 #content #rEdit .node-form label {
 
 }
@@ -461,14 +480,10 @@ body#front #content section {
 #content #rEdit .node-form fieldset legend {
 	display: none;
 }
-#content #rEdit .node-form fieldset,
-#content section content#rEdit {
+#content #rEdit .node-form fieldset {
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
-	border: none;
-	-webkit-box-shadow: 0px 0px 3px 2px #bbbbbb;
-	box-shadow: 0px 0px 3px 2px #bbbbbb;
 }
 #content #rEdit .node-form fieldset {
 	display: block;
@@ -486,8 +501,34 @@ body#front #content section {
 	font-size: 11px;
 	margin-left: 8px;
 }
+.date-clear-block,
+.container-inline-date {
+	clear: none !important;
+}
+#content #rEdit .node-form fieldset.group-dropdowns {
+ 	float: left;
+ 	margin-top: 15px;
+ 	max-width: 70%;
+}
+#content #rEdit .node-form fieldgroup.group-dropdowns .form-item {
+	float: none;
+}
 
 @media all and (max-width: 1025px) and (min-width: 600px) {
+	.section-month header {
+		height: 140px;
+	}
+	.section-month header .form-submit {
+		padding: 12px 18px;
+	}
+	.section-month header .views-widget-filter-title {
+		position: absolute;
+    right: 40px;
+    top: -76px;
+	}
+	.block-views.block-header {
+		margin-top: 80px;
+	}
   #content #rEdit .node-form .form-textarea {
 		width: inherit;
   	}
@@ -500,6 +541,9 @@ body#front #content section {
   #content #rEdit .node-form fieldset.group-gen-fields {
 	  max-width: 100%;
   	margin: 0;
+  }
+  #content #rEdit .node-form fieldset.group-dropdowns {
+  	max-width: 97%;
   }
 }
 
@@ -520,21 +564,156 @@ ul.menu li {
 	list-style-type: none;
 }
 
-/**** Applications Menu ****/
-ul#app-menu-main li {
-	float: left;
-	padding: 0 1px 0 0;
+/* Exposed Views Filters */
+header .views-submit-button {
+	left: -9px;
+  padding: 0 0 10px !important;
+  position: relative;
+  top: -10px;
 }
 
+/**** Applications Menu ****/
+header ul.menu {
+	position: absolute;
+}
+header ul.menu li {
+	float: left;
+  list-style: none outside none;
+  margin: 0;
+  border-right:1px solid #E0DFE3;
+}
+header ul.menu li:hover {
+  background: #242424; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fbac12 15%, #f77402 57%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fbac12), color-stop(57%,#f77402)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fbac12 15%,#f77402 57%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fbac12 1%,#f77402 41%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fbac12 1%,#f77402 41%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fbac12 1%,#f77402 41%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbac12', endColorstr='#f77402',GradientType=0 ); /* IE6-9 */
+
+}
+header ul.menu li:hover {
+/* 	background: #c6c6c6; Old browsers
+	background: -moz-linear-gradient(top,  #c6c6c6 1%, #e5e5e5 41%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#c6c6c6), color-stop(41%,#e5e5e5)); Chrome,Safari4+
+	background: -webkit-linear-gradient(top,  #c6c6c6 1%,#e5e5e5 41%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top,  #c6c6c6 1%,#e5e5e5 41%); Opera 11.10+
+	background: -ms-linear-gradient(top,  #c6c6c6 1%,#e5e5e5 41%); IE10+
+	background: linear-gradient(to bottom,  #c6c6c6 1%,#e5e5e5 41%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#e5e5e5',GradientType=0 ); IE6-9
+ */}
+header ul.menu li a {
+	text-decoration: none;
+  color: #000000;
+  font-size: 11px;	
+	font-weight: bold;
+	padding: 20px 10px 19px 19px;
+	float:left;
+}
+header ul.menu li:hover > a {
+	cursor: pointer;
+	color: #ffffff;
+}
+header ul.menu li.first {
+	-webkit-border-radius: .4em 0 0 .4em;
+	-moz-border-radius: .4em 0 0 .4em;
+	border-radius: .4em 0 0 .4em;
+}
+
+/* Child Menu Dropdowns */
+#sidebar-first { position: relative; }
+
+#sidebar-first ul.menu {
+  bottom: 0;
+  top: 0;
+  left: -10px;
+  position: absolute;	
+  background: #ffffff;
+  border-radius: 5px 5px 0 0;		
+	-moz-border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	border-top: 1px solid #dbdbdb;
+	border-right: 1px solid #dbdbdb;
+	border-left: 1px solid #dbdbdb;
+	
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin:    0 0;
+  -ms-transform-origin:     0 0;
+  -o-transform-origin:      0 0;
+  
+  -webkit-transform: rotate(90deg); 
+  -moz-transform:    rotate(90deg); 
+  -ms-transform:     rotate(90deg); 
+  -o-transform:      rotate(90deg); 
+}
+#sidebar-first ul.menu li ul {
+	-webkit-transform: rotate(-90deg); 
+  -moz-transform:    rotate(-90deg); 
+  -ms-transform:     rotate(-90deg); 
+  -o-transform:      rotate(-90deg); 
+	height: 253px;
+	width: 155px;
+	background: #fff;
+	display: none;
+	margin:6px 0 20px -25px;
+	padding-top: 10px;
+	position: absolute;
+ 	top: -16px;	
+ 	left: 23px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px 5px 5px50px;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#sidebar-first ul.menu li:hover > ul {
+	display: block;
+}
+#sidebar-first ul.menu li ul li,
+#sidebar-first ul.menu li ul li.first {
+	float: none;
+	border: none;
+	background: transparent;
+}
+#sidebar-first ul.menu li ul li {
+	padding: 0 0 0 5px;	
+	margin-bottom: -1px;
+}
+#sidebar-first ul.menu li ul li a{
+	color: #3381B7;
+}
+
+
+/* Month Selector */
+#sidebar-first ul.menu li.content_month {
+	padding:3px 10px 0 6px;
+	width: 87px;
+}
+#sidebar-first ul.menu li.content_month:hover {
+
+}
+#sidebar-first ul.menu li ul {
+
+}
+#sidebar-first ul.menu li.content_month ul li:hover {
+	background: white;
+}
+#sidebar-first ul.menu li.content_month a {
+	color:#3381B7;
+}
 /* Options Page */
-#options #content section content#rEdit {
+body#options #content section content#rEdit {
 	width: 92%;
-	margin: 10px 15px 0 15px;
+	margin: 0 13px;
 }
 body#options .view {
-	width: 100%;
+	width: 98%;
+	padding-left: 23px;
 	float: left;
 }
+body#options #content section content#rEdit form.node-form {
+	float: left;
+} 
 body#options .view .editablefields input {
 	width: 100%;
 }
