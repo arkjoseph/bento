@@ -619,7 +619,7 @@ header ul.menu li.first {
 /* Child Menu Dropdowns */
 #sidebar-first { position: relative; }
 
-#sidebar-first ul.menu {
+.menu-name-secondary-links ul.menu {
  	top: 107px;	
  	left: 22px;
   position: fixed;	
@@ -643,7 +643,7 @@ header ul.menu li.first {
   
   background: #3e8ac0;
 }
-#sidebar-first ul.menu li ul {
+.menu-name-secondary-links ul.menu li ul {
 	-webkit-transform: rotate(-90deg); 
   -moz-transform:    rotate(-90deg); 
   -ms-transform:     rotate(-90deg); 
@@ -668,30 +668,30 @@ header ul.menu li.first {
 	
 	
 }
-#sidebar-first ul.menu li:hover > ul {
+.menu-name-secondary-links ul.menu li:hover > ul {
 	display: block;
 }
-#sidebar-first ul.menu li ul li,
-#sidebar-first ul.menu li ul li.first {
+.menu-name-secondary-links ul.menu li ul li,
+.menu-name-secondary-links ul.menu li ul li.first {
 	float: none;
 	border: none;
 	background: transparent;
 }
-#sidebar-first ul.menu li a {
+.menu-name-secondary-links ul.menu li a {
 	color: #ffffff;
 	letter-spacing: 0.1em;
 }
-#sidebar-first ul.menu li ul li {
+.menu-name-secondary-links ul.menu li ul li {
 	padding: 0 0 0 2px;	
 	margin-bottom: -1px;
 }
-#sidebar-first ul.menu li ul li a{
+.menu-name-secondary-links ul.menu li ul li a{
 	color: #3E8AC0;
 	font-size: 15px;
 	letter-spacing: 0;
 }
 
-#sidebar-first ul.menu li {
+.menu-name-secondary-links ul.menu li {
 	padding:3px 10px 0 6px;
 	width: 104px;
 }
