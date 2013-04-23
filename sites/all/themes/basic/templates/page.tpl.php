@@ -33,7 +33,7 @@
 			      
 			    var target = $($(this).attr('data-target'));
 			    
-			    $(target).load($(this).attr('href'),function(response, status, xhr){			    
+			    $(target).html("Loading...").load($(this).attr('href'),function(response, status, xhr){			    
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		//	  	  		$('#rEdit .date-clear-block input').addClass("uniqueClass");
