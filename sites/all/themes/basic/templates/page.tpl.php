@@ -39,10 +39,11 @@
 		//	  	  		$('#rEdit .date-clear-block input').addClass("uniqueClass");
 		//		  	 		$(".uniqueClass").datepicker();
 		        		$("#rEdit").fadeIn();
+		        		$(this).datepicker();
 		  		     	console.log('success');
 				    }
 				    if (status == "error") {
-				     	alert("OOPS! Please contact the system admin!");
+				     	$(target).html("OOPS! Please contact the system admin!");
 				    }
 
 				  });

@@ -51,14 +51,14 @@
 			      } 
 			    var target = $($(this).attr('data-target'));
 			    
-			    $(target).load($(this).attr('href'),function(responseText, textStatus, XMLHttpRequest){
+			    $(target).html("Loading...").load($(this).attr('href'),function(responseText, textStatus, XMLHttpRequest){
 				    if (textStatus == "success") {
 				      // all good!    
 							$("#rEdit").fadeIn();
 							console.log('success');
 				    }
 				    if (textStatus == "error") {
-				     	alert("OOPS! Please contact the system admin!");
+							$(target).html("OOPS! Please contact the system admin!");
 				    }
 				  });
 			    e.preventDefault(); // prevent anchor from changing window.location

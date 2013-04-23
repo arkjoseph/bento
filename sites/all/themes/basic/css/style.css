@@ -701,8 +701,8 @@ header ul.menu li.first {
 
 /* Options Page */
 body#options #content section content#rEdit {
-	width: 92%;
-	margin: 0 13px;
+	width: 94%;
+	margin: 3px 13px 4px 23px;
 }
 body#options .view {
 	width: 98%;
