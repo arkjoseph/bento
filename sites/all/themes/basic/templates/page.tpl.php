@@ -13,8 +13,10 @@
     <script type="text/javascript">
 
 		$(function(){
-			$("li.content_month").prepend("<span>");
+			// Focus the first table field 
+			$(".views-row-first .views-field-nid a").trigger('click').focus();
 			
+		  // Fade the message area out after 5 seconds  
 		  setTimeout(function() {
 				$(".messages").fadeOut();
 			},5000);
