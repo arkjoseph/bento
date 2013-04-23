@@ -660,16 +660,16 @@ header ul.menu li.first {
 	margin:6px 0 20px -25px;
 	padding-top: 10px;
 	position: absolute;
- 	top: 107px;	
+ 	top: -7px;	
  	left: 22px;
 /*   border: 1px solid #dbdbdb;
  */
- 	border-radius:5px 5px 0px 0px;	
-	-moz-border-radius: 5px 5px 0px 0px;
-	-webkit-border-radius: 5px 5px 0px 0px;
+ 	border-radius:0 5px 5px 5px;	
+	-moz-border-radius: 0 5px 5px 5px;
+	-webkit-border-radius: 0 5px 5px 5px;
 	
-	-webkit-box-shadow: 0px 0px 3px 2px #bbbbbb;
-	box-shadow: 0px 0px 3px 2px #bbbbbb;
+	-webkit-box-shadow: 1px 1px 4px 1px #bbbbbb;
+	box-shadow: 1px 1px 4px 1px #bbbbbb;
 	
 	
 }
@@ -682,37 +682,25 @@ header ul.menu li.first {
 	border: none;
 	background: transparent;
 }
-#sidebar-first ul.menu li ul li {
-	padding: 0 0 0 5px;	
-	margin-bottom: -1px;
-}
 #sidebar-first ul.menu li a {
 	color: #ffffff;
+}
+#sidebar-first ul.menu li ul li {
+	padding: 0 0 0 2px;	
+	margin-bottom: -1px;
 }
 #sidebar-first ul.menu li ul li a{
 	color: #3E8AC0;
 	font-size: 15px;
-	letter-spacing: 2px;
+	letter-spacing: 0;
 }
 
-
-/* Month Selector */
-#sidebar-first ul.menu li.content_month {
+#sidebar-first ul.menu li {
 	padding:3px 10px 0 6px;
 	width: 87px;
 }
-#sidebar-first ul.menu li.content_month:hover {
 
-}
-#sidebar-first ul.menu li ul {
 
-}
-#sidebar-first ul.menu li.content_month ul li:hover {
-	background: white;
-}
-#sidebar-first ul.menu li.content_month a {
-	color:#3381B7;
-}
 /* Options Page */
 body#options #content section content#rEdit {
 	width: 92%;
