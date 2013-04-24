@@ -39,7 +39,7 @@
 		//	  	  		$('#rEdit .date-clear-block input').addClass("uniqueClass");
 		//		  	 		$(".uniqueClass").datepicker();
 		        		$("#rEdit").fadeIn();
-		        		$(this).datepicker();
+		        		$('#rEdit .date-clear-block input').datepicker();
 		  		     	console.log('success');
 				    }
 				    if (status == "error") {
