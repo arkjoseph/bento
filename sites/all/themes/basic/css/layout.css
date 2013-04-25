@@ -32,6 +32,9 @@ footer,
 .page-month.sidebar-left .center {
 	margin: 0;
 }
+.page-month.sidebar-left #sidebar-first {
+	border: none;
+}
 .inner {
   padding: 0;
 }

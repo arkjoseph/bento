@@ -241,10 +241,11 @@ input:focus {
 
 /* Data Bar above table of titles */
 .view-content header {
-	height: 30px;
-	width: 100%;
-	background: rgba(68, 68, 68, 0.9);
-	position: absolute;
+	height: 20px;
+  margin: 17px 0 10px;
+  min-width: 100%;
+  position: relative;
+  top: -16px;
 }
 .view-content header .add {
 	font-size: 14px;
@@ -274,15 +275,14 @@ tr.odd td {
 tr.odd {
 	background-color: white;
 }
-#content .view-content table {
-/*   display: block;
- */  float: left;
-  /* height: 50%; */
-  overflow-y: auto;
-  width: 100%;
-  margin-top: 31px;
-/*   display: inline-table;
- */}
+/* Monthly view */
+.page-month #content .view-content section {
+	float: left;
+  margin-top: -30px;
+	overflow-y:auto;
+	width: 100%;
+}
+
 #content .view-content table thead tr th {
 	font-size: 10px;
   height: 31px;
@@ -296,8 +296,7 @@ tr.odd {
 	padding-left: 11px;
 }
 #content .view-data-management {
-	overflow-y:auto;
-	width: 100%;
+
 }    
 #content .editablefields form {
 }
