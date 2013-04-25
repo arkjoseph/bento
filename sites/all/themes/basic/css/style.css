@@ -287,14 +287,16 @@ input:focus {
 }
 
 /* Data Bar above table of titles */
-#dataBar {
+.view-content header {
 	height: 30px;
 	width: 100%;
 	background: rgba(68, 68, 68, 0.9);
+	position: absolute;
 }
-#dataBar .add {
+.view-content header .add {
 	font-size: 14px;
 	color: #3381b7;		
+	float: right;
 }
 /******/
 /******  Tabular Data  ******/
@@ -319,16 +321,13 @@ tr.odd td {
 tr.odd {
 	background-color: white;
 }
-
-#content .block .view-content {
-	height: ;
-}
 #content .view-content table {
 /*   display: block;
  */  float: left;
   /* height: 50%; */
   overflow-y: auto;
   width: 100%;
+  margin-top: 31px;
 /*   display: inline-table;
  */}
 #content .view-content table thead tr th {
