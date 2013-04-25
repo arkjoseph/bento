@@ -14,6 +14,7 @@
  * @ingroup views_templates
  */
 ?>
+<a href="/node/add/data-collection" title="" data-target="#rEdit">Add Title</a>
 <table class="<?php print $class; ?>"<?php print $attributes; ?>>
   <?php if (!empty($title)) : ?>
     <caption><?php print $title; ?></caption>
