@@ -13,6 +13,14 @@
     <script type="text/javascript">
 
 		$(function(){
+
+			$.fn.autoSelectField = function(){
+			    var options = [];
+			    $("#edit-field-content-month-value option").each(function() {
+						options.push($.trim($(this).text()).toLowerCase());
+			    });
+			});
+			
 			// Focus the first table field 
 			$(".views-row-first .views-field-nid a").trigger('click').focus();
 			
@@ -36,12 +44,12 @@
 			    $(target).html("Loading...").load($(this).attr('href'),function(response, status, xhr){			    
 		  	    if (status == "success") {
 		         		// On Success   	  		
-		//	  	  		$('#rEdit .date-clear-block input').addClass("uniqueClass");
-		//		  	 		$(".uniqueClass").datepicker();
 		        		$("#rEdit").fadeIn();
 		        		$('#rEdit .date-clear-block input').datepicker();
-		  		     	console.log('success');
-				    }
+
+								console.log(options);
+								
+		  	    }
 				    if (status == "error") {
 				     	$(target).html("OOPS! Please contact the system admin!");
 				    }

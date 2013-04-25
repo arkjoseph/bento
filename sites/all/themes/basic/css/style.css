@@ -275,6 +275,7 @@ input:focus {
 /******/
 /******  Tabular Data  ******/
 /******/
+table {width: 100%;}
 thead th {
 
 }
