@@ -285,6 +285,17 @@ body#options #content .view .view-filters {
 input:focus { 
 	outline: none;
 }
+
+/* Data Bar above table of titles */
+#dataBar {
+	height: 30px;
+	width: 100%;
+	background: rgba(68, 68, 68, 0.9);
+}
+#dataBar .add {
+	font-size: 14px;
+	color: #3381b7;		
+}
 /******/
 /******  Tabular Data  ******/
 /******/
