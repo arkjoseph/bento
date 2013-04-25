@@ -241,16 +241,36 @@ input:focus {
 
 /* Data Bar above table of titles */
 .view-content header {
-	height: 20px;
+ 	background: none repeat scroll 0 0 #EEEEEE;
+  height: 20px;
   margin: 17px 0 10px;
   min-width: 100%;
   position: relative;
-  top: -16px;
+  top: -15px;    
+	-webkit-border-radius: .4em .4em 0 0;
+	-moz-border-radius: .4em .4em 0 0;
+	border-radius: .4em .4em 0 0;
 }
 .view-content header .add {
-	font-size: 14px;
-	color: #3381b7;		
-	float: right;
+	color: #3381B7;
+  float: left;
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 25px;
+  padding: 0 14px;
+	text-decoration: none;
+}
+.view-content header .add:hover {
+	color: #ffffff;
+	background: #242424; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fbac12 15%, #f77402 57%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fbac12), color-stop(57%,#f77402)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fbac12 15%,#f77402 57%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fbac12 1%,#f77402 41%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fbac12 1%,#f77402 41%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fbac12 1%,#f77402 41%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbac12', endColorstr='#f77402',GradientType=0 ); /* IE6-9 */
+		
 }
 /******/
 /******  Tabular Data  ******/
@@ -279,7 +299,7 @@ tr.odd {
 .page-month #content .view-content section {
 	float: left;
   margin-top: -30px;
-	overflow-y:auto;
+	overflow-x:auto;
 	width: 100%;
 }
 
@@ -289,7 +309,7 @@ tr.odd {
   line-height: 10px;
  	border: none;
  	border-right: 1px solid #E0DFE3;
-  border-top: 1px solid #E0DFE3;
+  border-top: none;
 	text-align: center;  
   /* Gradient */
 	background: #EEEEEE; /* Old browsers */
