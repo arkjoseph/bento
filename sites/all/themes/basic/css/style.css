@@ -393,8 +393,6 @@ tr.odd {
 	-webkit-border-radius: 5px; 
 }
 #content section {  
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 body#front #content section {
 
