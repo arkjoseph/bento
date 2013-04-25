@@ -14,10 +14,13 @@
 
 		$(function(){
 
-			    var options = [];
-			    $("#edit-field-content-month-value option").each(function() {
-						options.push($.trim($(this).text()).toLowerCase());
-			    });
+		  var month = window.location;
+		  
+	    var options = [];
+	    $("#edit-field-content-month-value option").each(function() {
+		    options.push($.trim(
+			    $(this).text()).toLowerCase());
+	    });
 			
 			// Focus the first table field 
 			$(".views-row-first .views-field-nid a").trigger('click').focus();
@@ -45,6 +48,7 @@
 		        		$("#rEdit").fadeIn();
 		        		$('#rEdit .date-clear-block input').datepicker();
 
+								console.log(month);
 								console.log(options);
 								
 		  	    }
