@@ -14,8 +14,6 @@
 
 		$(function(){
 
-
-		    
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
 		      if (matches) {
@@ -59,9 +57,21 @@
 		        		$('#rEdit .date-clear-block input').datepicker();
 
 		      		  $("#node-form[action*='add']").each(function(){
+			      		  var action = $(this);
 		      				console.log(endPath);
 									console.log(options);
-							  });
+
+
+									// Check if value/array exists logic
+									if( $.inArray((endPath), options) > 0) {
+								    		return false;
+									
+									}  else {
+							    			console.log("found a match");
+									}
+
+
+								});
 				  
 		  	    }
 				    if (status == "error") {
