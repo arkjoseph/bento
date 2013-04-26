@@ -14,7 +14,19 @@
 
 		$(function(){
 
-		  var month = window.location;
+		  var path = window.location;
+
+		  function getLastSegmentOfPath(url) {
+		      var matches = url.match(/\/([^\/]+)\/?$/);
+		      if (matches) {
+		          return matches[1];
+		      }
+		      return null;
+		  }
+
+		  var endPath = getLastSegmentOfPath(window.location.href);
+
+			
 		  
 	    var options = [];
 	    $("#edit-field-content-month-value option").each(function() {
@@ -48,7 +60,7 @@
 		        		$("#rEdit").fadeIn();
 		        		$('#rEdit .date-clear-block input').datepicker();
 
-								console.log(month);
+								console.log(endPath);
 								console.log(options);
 								
 		  	    }
