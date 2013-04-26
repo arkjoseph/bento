@@ -14,8 +14,8 @@
 
 		$(function(){
 
-		  var path = window.location;
 
+		    
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
 		      if (matches) {
@@ -23,12 +23,9 @@
 		      }
 		      return null;
 		  }
-
 		  var endPath = getLastSegmentOfPath(window.location.href);
 
-			
-		  
-	    var options = [];
+		  var options = [];
 	    $("#edit-field-content-month-value option").each(function() {
 		    options.push($.trim(
 			    $(this).text()).toLowerCase());
@@ -53,16 +50,19 @@
 		      } 
 			      
 			    var target = $($(this).attr('data-target'));
-			    
+
+			    // AHAH Call 
 			    $(target).html("Loading...").load($(this).attr('href'),function(response, status, xhr){			    
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
 		        		$('#rEdit .date-clear-block input').datepicker();
 
-								console.log(endPath);
-								console.log(options);
-								
+		      		  $("#node-form[action*='add']").each(function(){
+		      				console.log(endPath);
+									console.log(options);
+							  });
+				  
 		  	    }
 				    if (status == "error") {
 				     	$(target).html("OOPS! Please contact the system admin!");
