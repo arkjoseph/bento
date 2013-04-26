@@ -63,7 +63,7 @@
 
 
 									// Check if value/array exists logic
-									if( $.inArray((endPath), options) > 0) {
+									if( $.inArray(endPath, options) != -1) {
 								    		return false;
 									
 									}  else {
