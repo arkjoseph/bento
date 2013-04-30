@@ -393,11 +393,12 @@ tr.odd {
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px; 
 }
-#content section {  
-}
-body#front #content section {
 
+/* All Option select form fields */
+select.form-select:parent {
+	background: red;
 }
+
 
 /* Node Forms loaded AJAX */
 .form-radios .form-item {
@@ -559,7 +560,7 @@ header ul.menu li {
   border-right:1px solid #E0DFE3;
 }
 header ul.menu li:hover,
-header ul.menu li.active a.active {
+header ul.menu li.active {
   background: #242424; /* Old browsers */
 	background: -moz-linear-gradient(top,  #fbac12 15%, #f77402 57%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#fbac12), color-stop(57%,#f77402)); /* Chrome,Safari4+ */

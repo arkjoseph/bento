@@ -13,7 +13,7 @@
     <script type="text/javascript">
 
 		$(function(){
-
+			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
 		      if (matches) {
@@ -54,23 +54,17 @@
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
-		        		$('#rEdit .date-clear-block input').datepicker();
 
+		        		$("input.required").each(function() {
+		    //    		    if($(this).val() === "")
+		    //    		     alert("Empty Fields!!");
+		        		});
+		        		 
 		      		  $("#node-form[action*='add']").each(function(){
-			      		  var action = $(this);
-		      				console.log(endPath);
-									console.log(options);
-
-
-									// Check if value/array exists logic
-									if( $.inArray(endPath, options) != -1) {
-								    		return false;
-									
-									}  else {
-							    			console.log("found a match");
-									}
-
-
+		      					$.expr[':'].containsIgnoreCase = function (n, i, m) {
+		      	            return jQuery(n).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+		      	        };
+										$("#edit-field-content-month-value option:containsIgnoreCase('" + endPath + "')").attr("selected","selected");									
 								});
 				  
 		  	    }
