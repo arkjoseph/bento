@@ -29,10 +29,12 @@ footer,
 .sidebar-left .center {
   margin-left: 190px;
 }
-.page-month.sidebar-left .center {
+.page-month.sidebar-left .center,
+.page-export.sidebar-left .center {
 	margin: 0;
 }
-.page-month.sidebar-left #sidebar-first {
+.page-month.sidebar-left #sidebar-first,
+.page-export.sidebar-left .center {
 	border: none;
 }
 .inner {
