@@ -614,7 +614,7 @@ header ul.menu li.first {
 	border-top: 1px solid #dbdbdb;
 	border-right: 1px solid #dbdbdb;
 	border-left: 1px solid #dbdbdb;
-	
+	z-index:999;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin:    0 0;
   -ms-transform-origin:     0 0;

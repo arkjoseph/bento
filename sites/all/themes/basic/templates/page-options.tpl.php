@@ -41,7 +41,7 @@
 //			});
 
 			// Add custom attribute for load function 
-			$("#sidebar-first ul.menu li a").attr('data-target','#rEdit');
+			$(".menu-name-navigation ul.menu li a").attr('data-target','#rEdit');
 			
 			// Load function for DOM hyperLinks. (NEEDS PRE-LOADER)
 		  $("#rEdit").hide();		  
