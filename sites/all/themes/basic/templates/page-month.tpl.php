@@ -11,70 +11,80 @@
     <?php print $scripts; ?>
     
     <script type="text/javascript">
-		$(document).ready(function(){
 
-		  // TO DO...Timeout for status messages 
-		  $(function() {
-			    // setTimeout() function will be fired after page is loaded
-			    // it will wait for 5 sec. and then will fire
-			    // $("#successMessage").hide() function
-			    setTimeout(function() {
-			        $(".warning, .error, .status").hide('blind', {}, 500)
-			    }, 5000);
-			});
+		$(function(){
 			
-			// Options add content menu 
-		  // declare vars 
-//			var block1menu = $('#block-menu_block-1 ul.menu');
-//		  var listItem = $('<li class="pull" style="display: block;"><span class="button red node-add">+</a></li>').prependTo(block1menu);
-//		  var types = $(block1menu).find("li:not(:eq(0))").wrapAll("<ul class='down'>");
+		  function getLastSegmentOfPath(url) {
+		      var matches = url.match(/\/([^\/]+)\/?$/);
+		      if (matches) {
+		          return matches[1];
+		      }
+		      return null;
+		  }
+		  var endPath = getLastSegmentOfPath(window.location.href);
 
-//			$(".down").appendTo(".pull");
-
-//			$(".pull").hover(function(){
-//				$(this).find(".down").fadeIn();
-//			},function(){
-//				$(this).find(".down").fadeOut();
-//			});		
-//			$(".down").click(function(){
-//				$(this).fadeOut();
-//			});
-
-			// Add custom attribute for load function 
-			$("#sidebar-first ul.menu li a").attr('data-target','#rEdit');
+		  var options = [];
+	    $("#edit-field-content-month-value option").each(function() {
+		    options.push($.trim(
+			    $(this).text()).toLowerCase());
+	    });
 			
-			// Load function for DOM hyperLinks. (NEEDS PRE-LOADER)
-		  $("#rEdit").hide();		  
-			$("[data-target]").live('click', function (e){
-			    if($("#rEdit").is(":visible")){
-				      $("#rEdit").fadeOut();
-			      } 
+			// Focus the first table field 
+			$(".views-row-first .views-field-nid a").trigger('click').focus();
+			
+		  // Fade the message area out after 5 seconds  
+		  setTimeout(function() {
+				$(".messages").fadeOut();
+			},5000);
+			
+		  $(".parent-mlid-11 ul li a, .add_title a").attr('data-target','#rEdit');
+
+		  $("#rEdit").hide();
+
+		  $("[data-target]").live('click', function (event){
+
+				 if($("#rEdit").is(":visible")){
+				     $("#rEdit").fadeOut();
+		      } 
+			      
 			    var target = $($(this).attr('data-target'));
-			    
-			    $(target).html("Loading...").load($(this).attr('href'),function(responseText, textStatus, XMLHttpRequest){
-				    if (textStatus == "success") {
-				      // all good!    
-							$("#rEdit").fadeIn();
-							console.log('success');
+
+			    // AHAH Call 
+			    $(target).html("Loading...").load($(this).attr('href'),function(response, status, xhr){			    
+		  	    if (status == "success") {
+		         		// On Success   	  		
+		        		$("#rEdit").fadeIn();
+
+		        		$("input.required").each(function() {
+		    //    		    if($(this).val() === "")
+		    //    		     alert("Empty Fields!!");
+		        		});
+		        		 
+		      		  $("#node-form[action*='add']").each(function(){
+		      					$.expr[':'].containsIgnoreCase = function (n, i, m) {
+		      	            return jQuery(n).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+		      	        };
+										$("#edit-field-content-month-value option:containsIgnoreCase('" + endPath + "')").attr("selected","selected");									
+								});
+				  
+		  	    }
+				    if (status == "error") {
+				     	$(target).html("OOPS! Please contact the system admin!");
 				    }
-				    if (textStatus == "error") {
-							$(target).html("OOPS! Please contact the system admin!");
-				    }
+
 				  });
-			    e.preventDefault(); // prevent anchor from changing window.location
-				});
+
+			    event.preventDefault(); // prevent anchor from changing window.location
+
+			});
 			
 		});    
     </script>
     
   </head>
-  <body class="<?php print $body_classes; ?>" id="options">
-   <div id="skip">
-      <a href="#content"><?php print t('Skip to Content'); ?></a>
-      <?php if (!empty($primary_links) || !empty($secondary_links)): ?>
-        <a href="#navigation"><?php print t('Skip to Navigation'); ?></a>
-      <?php endif; ?>
-    </div>
+  <body class="<?php print $body_classes; ?>" id="front">
+    <div id="skip">
+     </div>
 
     <div id="page">
 
@@ -83,15 +93,15 @@
     <header>
       <?php if ($header): ?>
         <div id="header-region">
-          <?php print $header; ?>
+          <?php print $header; ?>    
         </div>
       <?php endif; ?>
-    </header> <!-- /header -->
+		</header> <!-- /header -->
 
     <!-- ______________________ MAIN _______________________ -->
 
-		<div id="main" class="clearfix">
-      
+    <div id="main" class="clearfix">
+    
       <div id="content">
         <div id="content-inner" class="inner column center">
 
@@ -118,9 +128,10 @@
           <?php endif; ?>
 
           <div id="content-area">
-            
-          <section><content id="rEdit"></content></section>
             <?php print $content; ?>
+          
+						<section><content id="rEdit"></content></section>
+          
           </div> <!-- /#content-area -->
 
           </div>
