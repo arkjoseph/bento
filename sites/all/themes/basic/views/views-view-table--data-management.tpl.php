@@ -16,7 +16,7 @@
 ?>
 
 <header>
-	<a class="add" href="/node/add/data-collection" title="Add a Title" data-target="#rEdit">+</a>
+	<a class="add" href="/node/add/data-collection?<?php print drupal_get_destination(); ?>" title="Add a Title" data-target="#rEdit">+</a>
 </header>
 <section>
 	<table class="<?php print $class; ?>"<?php print $attributes; ?>>
