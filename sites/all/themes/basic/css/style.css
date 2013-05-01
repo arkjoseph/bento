@@ -333,6 +333,7 @@ tr.odd {
 #content .editablefields textarea,
 #content .editablefields input {
 	cursor: text;
+	background: transparent;
 }
 #content .editablefields form select {
 	cursor: pointer;
@@ -461,7 +462,7 @@ select.form-select:parent {
 #content #rEdit .node-form fieldset {
 	display: block;
 	max-width: 25%;
-  padding: 15px 0 40px 25px;
+  padding: 15px 0 40px 15px;
 }
 #content #rEdit .node-form fieldset.group-gen-fields {
   display: block;
