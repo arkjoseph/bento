@@ -8,7 +8,7 @@
     <?php endif; ?>
 
     <div class="content">
-      <?php  print $content; ?>
+      <?php // print $content; ?>
     </div>
 
     <?php if ($terms): ?>
