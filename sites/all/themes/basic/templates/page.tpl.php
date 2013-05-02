@@ -16,7 +16,11 @@
 
 			$("#data").each(function(){
 				$(this).slideDown().prev().hide();
-			})
+			});
+			
+			$(".views-table tr td").click(function(){
+				$(this).find("a").trigger("click");
+			});
 			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
