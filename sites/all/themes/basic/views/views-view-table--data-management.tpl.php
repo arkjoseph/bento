@@ -21,8 +21,8 @@
 
 <figure><img src="/sites/all/themes/basic/images/viewLoad.gif" width="54" height="55" /></figure>
 
-<section>
-	<table style="display:none;" class="<?php print $class; ?>"<?php print $attributes; ?>>
+<section id="data" style="display:none;">
+	<table class="<?php print $class; ?>"<?php print $attributes; ?>>
 	  <?php if (!empty($title)) : ?>
 	    <caption><?php print $title; ?></caption>
 	  <?php endif; ?>
