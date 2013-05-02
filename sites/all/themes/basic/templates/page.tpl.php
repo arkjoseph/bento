@@ -19,7 +19,7 @@
 			});
 			
 			$(".views-table tr td").live('click',function(){
-				$(this).parent("tr").find("td.views-field-field-title-value").addClass("selected").next("a").trigger('click');
+				$(this).parent("tr").find("td.views-field-field-title-value").addClass("selected").find("a").trigger('click');
 			}); 
 			
 		  function getLastSegmentOfPath(url) {
