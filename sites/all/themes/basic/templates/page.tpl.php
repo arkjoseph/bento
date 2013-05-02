@@ -15,7 +15,7 @@
 		$(function(){
 
 			$("#data").each(function(){
-					$(this).slideDown().prev("figure").hide();
+					$(this).slideUp().prev("figure").hide();
 			});
 			
 		  function getLastSegmentOfPath(url) {
