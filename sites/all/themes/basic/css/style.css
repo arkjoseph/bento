@@ -296,6 +296,7 @@ tr.odd td {
 tr.odd {
 	background-color: white;
 }
+
 /* Monthly view */
 .page-month #content .view-content section {
 	float: left;

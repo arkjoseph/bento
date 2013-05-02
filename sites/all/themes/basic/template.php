@@ -462,3 +462,18 @@ function basic_button($element) {
   return theme_button($element);
 }
 
+/**
+ * Removes column headers for columns that do not have content.
+ */
+function basic_preprocess_views_view_table__data_management(&$vars) {
+  $rows = $vars['rows'];
+  $column_has_content = array();
+  foreach ($rows as $count => $row) {
+    foreach ($row as $field => $content) {
+      if (!empty($content)) {
+        $column_has_content[$field] = TRUE;
+      }
+    }
+  }
+  $vars['column_has_content'] = $column_has_content;
+}
