@@ -275,7 +275,7 @@ input:focus {
 /******/
 /******  Tabular Data  ******/
 /******/
-table {width: 100%;}
+table {width: 100%; font-size: 11px;}
 thead th {
 
 }
@@ -290,17 +290,23 @@ tr.odd	{
 }
 tr.even td,
 tr.odd td {
-	border-right:1px solid #E3E3E3;	
-	padding: 0;
+	border-right:1px dotted #E3E3E3;	
+  border-right: 1px dotted #E3E3E3;
+  height: 15px;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
 }
 tr.odd {
 	background-color: white;
 }
 
 /* Monthly view */
-tr.even td.views-field-field-title-value,
-tr.odd td.views-field-field-title-value {
-	min-width: 5%;
+.page-month #content .view-content tr.even td.views-field-field-title-value,
+.page-month #content .view-content tr.odd td.views-field-field-title-value {
+	 overflow: hidden;
+    white-space: nowrap;
+    width: 20%
 }
 
 .page-month #content .view-content section {
@@ -370,7 +376,6 @@ tr.odd td.views-field-field-title-value {
 #content .view-content .views-table tbody tr.odd td a
 	{
 	overflow: hidden;
-	white-space: pre;
 }
 .views-field-nid a {
 	text-indent: -9999px;
