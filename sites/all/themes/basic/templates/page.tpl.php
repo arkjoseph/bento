@@ -14,7 +14,7 @@
 
 		$(function(){
 
-			$("body.section-month table.views-table").each(function(){
+			$("section-month .views-table").each(function(){
 					$(this).slideDown().prev().hide();
 			});
 			

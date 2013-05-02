@@ -18,11 +18,9 @@
 <header>
 	<a class="add" href="/node/add/data-collection?<?php print drupal_get_destination(); ?>" title="Add a Title" data-target="#rEdit">+</a>
 </header>
+
 <section>
-
-	<figure><img class="view_loading" src="../images/viewLoad.gif" width="54" height="55" /></figure>
-
-	<table style="display: none;" <?php print $class; ?>"<?php print $attributes; ?>>
+	<table style="display:none;" class="<?php print $class; ?>"<?php print $attributes; ?>>
 	  <?php if (!empty($title)) : ?>
 	    <caption><?php print $title; ?></caption>
 	  <?php endif; ?>
