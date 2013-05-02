@@ -13,6 +13,10 @@
     <script type="text/javascript">
 
 		$(function(){
+
+			$("body.section-month table.views-table").each(function(){
+					$(this).slideDown().prev().hide();
+			});
 			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
@@ -23,12 +27,6 @@
 		  }
 		  var endPath = getLastSegmentOfPath(window.location.href);
 
-		  var options = [];
-	    $("#edit-field-content-month-value option").each(function() {
-		    options.push($.trim(
-			    $(this).text()).toLowerCase());
-	    });
-			
 			// Focus the first table field 
 			$(".views-row-first .views-field-nid a").trigger('click').focus();
 			

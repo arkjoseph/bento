@@ -19,19 +19,24 @@
 	<a class="add" href="/node/add/data-collection?<?php print drupal_get_destination(); ?>" title="Add a Title" data-target="#rEdit">+</a>
 </header>
 <section>
-	<table class="<?php print $class; ?>"<?php print $attributes; ?>>
+
+	<figure><img class="view_loading" src="../images/viewLoad.gif" width="54" height="55" /></figure>
+
+	<table style="display: none;" <?php print $class; ?>"<?php print $attributes; ?>>
 	  <?php if (!empty($title)) : ?>
 	    <caption><?php print $title; ?></caption>
 	  <?php endif; ?>
 	  <thead>
 	    <tr>
 	      <?php foreach ($header as $field => $label): ?>
-
-				<?php if ($column_has_content[$field]):  ?>
-     	   <th class="views-field views-field-<?php print $fields[$field]; ?>">
-      	    <?php print $label; ?>
-        	</th>
-      	<?php endif; ?>
+	      
+				<!-- Hide columns if they do not have any content-->
+	      
+		      <?php if ($column_has_content[$field]):  ?>
+	     	   <th class="views-field views-field-<?php print $fields[$field]; ?>">
+	      	    <?php print $label; ?>
+	        	</th>
+	      	<?php endif; ?>
 
 	      <?php endforeach; ?>
 	    </tr>
@@ -40,6 +45,8 @@
 	    <?php foreach ($rows as $count => $row): ?>
 	      <tr class="<?php print implode(' ', $row_classes[$count]); ?>">
 	        <?php foreach ($row as $field => $content): ?>
+			
+					<!-- Hide columns if they do not have any content-->
 
 						<?php if ($column_has_content[$field]):  ?>
 		          <td class="views-field views-field-<?php print $fields[$field]; ?>">
