@@ -299,9 +299,10 @@ tr.odd {
 /* Monthly view */
 .page-month #content .view-content section {
 	float: left;
+  height: 350px;
   margin-top: -30px;
-	overflow-x:auto;
-	width: 100%;
+  overflow-x: auto;
+  width: 100%;
 }
 
 #content .view-content table thead tr th {
