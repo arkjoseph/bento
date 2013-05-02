@@ -298,6 +298,11 @@ tr.odd {
 }
 
 /* Monthly view */
+tr.even td.views-field-field-title-value,
+tr.odd td.views-field-field-title-value {
+	min-width: 5%;
+}
+
 .page-month #content .view-content section {
 	float: left;
   height: 350px;
