@@ -15,7 +15,7 @@
 		$(function(){
 
 			$("section-month .views-table").each(function(){
-					$(this).slideDown().prev().hide();
+					$(this).slideDown().prev("figure").hide();
 			});
 			
 		  function getLastSegmentOfPath(url) {

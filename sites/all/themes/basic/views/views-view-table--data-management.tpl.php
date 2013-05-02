@@ -19,7 +19,7 @@
 	<a class="add" href="/node/add/data-collection?<?php print drupal_get_destination(); ?>" title="Add a Title" data-target="#rEdit">+</a>
 </header>
 
-<figure><img src="../images/viewLoad.gif" width="54" height="55" /></figure>
+<figure><img src="/sites/all/themes/basic/images/viewLoad.gif" width="54" height="55" /></figure>
 
 <section>
 	<table style="display:none;" class="<?php print $class; ?>"<?php print $attributes; ?>>
