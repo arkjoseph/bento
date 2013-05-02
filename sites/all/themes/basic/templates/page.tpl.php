@@ -15,8 +15,8 @@
 		$(function(){
 
 			$("#data").each(function(){
-					$(this).slideUp().prev("figure").hide();
-			});
+				$(this).slideDown().prev().hide();
+			})
 			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
