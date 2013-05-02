@@ -806,3 +806,14 @@ body#options #rEdit {
 	position: relative;
 	top: 1px;
 }
+
+/* View Table Loader */
+figure.loaderWrap {
+	background: #EEEEEE;
+  display: none;
+  height: 320px;
+  margin: -30px 0 0;
+  padding-top: 60px;
+	text-align: center;
+	border: 1px solid #E0DFE3;
+}
