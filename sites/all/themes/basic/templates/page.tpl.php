@@ -18,8 +18,8 @@
 				$(this).slideDown().prev().hide();
 			});
 			
-			$(".views-table tr td").live('click',function(){
-				$(this).parent("tr").find("td.views-field-field-title-value").addClass("selected").find("a").trigger('click');
+			$(".views-table tr td").click(function(){
+				$(this).parent("tr").find("td.views-field-field-title-value").find("a").trigger('click');
 				return false;
 			}); 
 			
