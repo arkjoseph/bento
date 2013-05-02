@@ -20,6 +20,7 @@
 			
 			$(".views-table tr td").live('click',function(){
 				$(this).parent("tr").find("td.views-field-field-title-value").addClass("selected").find("a").trigger('click');
+				return false;
 			}); 
 			
 		  function getLastSegmentOfPath(url) {
