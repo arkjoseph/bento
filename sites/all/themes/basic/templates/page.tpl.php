@@ -18,9 +18,10 @@
 				$(this).slideDown().prev().hide();
 			});
 			
-			$(".views-table tr td").click(function(){
-				$(this).find("a").trigger("click");
-			});
+			$(".views-table tr td").live('click',function(){
+				$(this).parent("tr").find("td.views-field-field-title-value").addClass("selected");
+			 $(".selected a").trigger('click');
+			}); 
 			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
