@@ -58,7 +58,17 @@
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
-		        		 
+        		    $("#node-form").submit(function(event){        		        
+        		        if ($(".required").val() == ""){
+            		            event.preventDefault();
+            		        }
+            		        if($('.form-radio').is(':not(:checked)')) { 
+            		            event.preventDefault();
+                		    } 
+        								$("#edit-submit").submit();
+            		});
+
+		        		
 		      		  $("#node-form[action*='add']").each(function(){
 		      					$.expr[':'].containsIgnoreCase = function (n, i, m) {
 		      	            return jQuery(n).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
@@ -80,15 +90,6 @@
 		});    
 		$(document).ajaxSuccess(function() {
 
-	    $("#node-form").submit(function(event){        		        
-		        if ($(".required").val() == ""){
-    		            event.preventDefault();
-    		        }
-    		        if($('.form-radio').is(':not(:checked)')) { 
-    		            event.preventDefault();
-        		    } 
-										$("#edit-submit").submit();
-    		    });
 			
 		});
     </script>
