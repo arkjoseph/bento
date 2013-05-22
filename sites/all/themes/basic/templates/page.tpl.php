@@ -66,8 +66,9 @@
         		        }
         		        if($('.form-radio').is(':not(:checked)')) { 
         		            event.preventDefault();
-            		    }
-        		        
+            		    } else {
+										$(this).submit();
+                		}
         		    });
 		        		 
 		      		  $("#node-form[action*='add']").each(function(){
