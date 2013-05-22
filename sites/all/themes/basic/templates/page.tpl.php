@@ -58,7 +58,7 @@
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
-        		    $("#node-form").submit(function(event){        		        
+        		    $("#node-form").bind('submit', function(event){        		        
         		        if	($(".required").val() == ""){
             		            event.preventDefault();
             		        }
@@ -66,8 +66,9 @@
             		            event.preventDefault();
                 		    }
             		    else {
+												console.log("true");
         								return true;
-            		    }
+                		    }
             		});
 
 		        		
