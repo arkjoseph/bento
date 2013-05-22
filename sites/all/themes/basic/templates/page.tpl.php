@@ -79,10 +79,9 @@
 			
 		});    
 		$(document).ajaxSuccess(function() {
-			alert('complete');
-			// Submit 
-    		    $("#node-form").submit(function(event){        		        
-    		        if ($(".required").val() == ""){
+
+	    $("#node-form").submit(function(event){        		        
+		        if ($(".required").val() == ""){
     		            event.preventDefault();
     		        }
     		        if($('.form-radio').is(':not(:checked)')) { 
