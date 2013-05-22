@@ -58,17 +58,6 @@
 		  	    if (status == "success") {
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
-
-        		    // Submit 
-        		    $("#node-form").submit(function(event){        		        
-        		        if ($(".required").val() == ""){
-        		            event.preventDefault();
-        		        }
-        		        if($('.form-radio').is(':not(:checked)')) { 
-        		            event.preventDefault();
-            		    } 
-										$("#edit-submit").submit();
-        		    });
 		        		 
 		      		  $("#node-form[action*='add']").each(function(){
 		      					$.expr[':'].containsIgnoreCase = function (n, i, m) {
@@ -89,6 +78,20 @@
 			});
 			
 		});    
+		$(document).ajaxSuccess(function() {
+			alert('complete');
+			// Submit 
+    		    $("#node-form").submit(function(event){        		        
+    		        if ($(".required").val() == ""){
+    		            event.preventDefault();
+    		        }
+    		        if($('.form-radio').is(':not(:checked)')) { 
+    		            event.preventDefault();
+        		    } 
+										$("#edit-submit").submit();
+    		    });
+			
+		});
     </script>
     
   </head>
