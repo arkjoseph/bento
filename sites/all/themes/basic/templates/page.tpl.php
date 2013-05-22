@@ -59,11 +59,15 @@
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
 
-        		    // Submit
+        		    // Submit 
         		    $("#node-form").submit(function(event){        		        
         		        if ($(".required").val() == ""){
         		            event.preventDefault();
         		        }
+        		        if($('.form-radio').is(':not(:checked)')) { 
+        		            event.preventDefault();
+            		    }
+        		        
         		    });
 		        		 
 		      		  $("#node-form[action*='add']").each(function(){
