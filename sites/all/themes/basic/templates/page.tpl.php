@@ -18,10 +18,11 @@
 				$(this).slideDown().prev().hide();
 			});
 			
-			$(".views-table tr td").click(function(){
-				$(this).parent("tr").find("td.views-field-field-title-value").find("a").trigger('click');
-				return false;
-			}); 
+			// TO DO -- Clickable row 
+		//	$(".views-table tr td").click(function(){
+		//		$(this).parent("tr").find("td.views-field-field-title-value").find("a").trigger('click');
+		//		return false;
+		//	}); 
 			
 		  function getLastSegmentOfPath(url) {
 		      var matches = url.match(/\/([^\/]+)\/?$/);
@@ -58,10 +59,12 @@
 		         		// On Success   	  		
 		        		$("#rEdit").fadeIn();
 
-		        		$("input.required").each(function() {
-		    //    		    if($(this).val() === "")
-		    //    		     alert("Empty Fields!!");
-		        		});
+        		    // Submit
+        		    $("#node-form").submit(function(event){        		        
+        		        if ($(".required").val() == ""){
+        		            event.preventDefault();
+        		        }
+        		    });
 		        		 
 		      		  $("#node-form[action*='add']").each(function(){
 		      					$.expr[':'].containsIgnoreCase = function (n, i, m) {
